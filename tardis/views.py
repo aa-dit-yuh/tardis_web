@@ -1,4 +1,3 @@
-import collections
 import yaml
 
 from django.shortcuts import render

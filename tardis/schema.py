@@ -18,7 +18,7 @@ _FIELD_MAP = {
 
 def generate_schema():
     """
-    ```generate_dict``` generates a dictionary
+    ```generate_schema``` generates a dictionary
     from the the configuration scheme.
     The configuration schema is retrived from _URL.
     """

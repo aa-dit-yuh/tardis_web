@@ -5,4 +5,8 @@ django-toolbelt
 gunicorn
 psycopg2
 static3
+urllib2
 wsgiref
+bootstrap3
+django-crispy-forms
+pyyaml
