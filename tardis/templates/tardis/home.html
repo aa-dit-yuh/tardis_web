@@ -41,14 +41,25 @@ Configuration Generator
     </div>
     <div class="panel-body">
       {% bootstrap_form plasma_form layout="horizontal" %}
-      NLTE
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        NLTE
+      </div>
       <div class="panel-body">
         {% bootstrap_form nlte_form layout="horizontal" %}
       </div>
     </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Spectrum
+    </div>
+    <div class="panel-body">
+      {% bootstrap_form spectrum_form layout="horizontal" %}
     </div>
   </div>
-  {% buttons submit='Generate YAML' reset='Clear' layout='horizontal' %}{% endbuttons %}
+  {% buttons submit='Generate YAML' reset='Clear' layout='' %}{% endbuttons %}
 </form>
 {% endblock %}
   

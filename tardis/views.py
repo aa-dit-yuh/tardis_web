@@ -35,6 +35,11 @@ def home(request):
             legend='Plasma',
             fields=tardis_schema['plasma'],
         )
+        spectrum_form = DynamicForm(
+            request.POST,
+            legend='spectrum',
+            fields=tardis_schema['spectrum']
+        )
         _gen_schema = []
         if config_version_form.is_valid():
             _gen_schema['tardis_config_version'] = \
@@ -57,6 +62,9 @@ def home(request):
             for field in nlte_form.fields:
                 _gen_schema['plasma']['nlte'][field] = \
                     nlte_form.cleaned_data[field]
+        if spectrum_form.is_valid():
+            _gen_schema['spectrum'] = \
+                spectrum_form.cleaned_data['Input']
 
         response = HttpResponse(yaml.safe_dump(
             _gen_schema,
@@ -88,12 +96,17 @@ def home(request):
             legend='Plasma',
             fields=tardis_schema['plasma'],
         )
-
+        spectrum_form = DynamicForm(
+            request.POST,
+            legend='spectrum',
+            fields=tardis_schema['spectrum']
+        )
         return render(request, 'tardis/home.html', {
             'config_version_form': config_version_form,
             'supernova_form': supernova_form,
             'atom_data_form': atom_data_form,
             'plasma_form': plasma_form,
             'nlte_form': nlte_form,
+            'spectrum_form': spectrum_form,
             }
         )

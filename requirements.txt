@@ -7,6 +7,5 @@ psycopg2
 static3
 urllib2
 wsgiref
-django-bootstrap3
 django-crispy-forms
 pyyaml
