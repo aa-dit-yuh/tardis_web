@@ -99,7 +99,6 @@ def home(request):
             fields=tardis_schema['plasma'],
         )
         spectrum_form = DynamicForm(
-            request.POST,
             legend='spectrum',
             fields=tardis_schema['spectrum']
         )
