@@ -40,8 +40,10 @@ def home(request):
             legend='spectrum',
             fields=tardis_schema['spectrum']
         )
-        _gen_schema = []
+        _gen_schema = {}
         if config_version_form.is_valid():
+            _gen_schema['tardis_config_version'] = {}
+            print config_version_form.cleaned_data
             _gen_schema['tardis_config_version'] = \
                 config_version_form.cleaned_data['Input']
         if supernova_form.is_valid():
