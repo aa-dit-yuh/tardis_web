@@ -9,6 +9,8 @@ _URL = 'https://raw.githubusercontent.com/tardis-sn/tardis/master/tardis/data/ta
 _FIELD_MAP = {
     'string': forms.CharField,
     'list': forms.CharField,
+    'quantity_range_sampled': forms.CharField,
+    'container-property': forms.CharField,
     'quantity': forms.FloatField,
     'bool': forms.BooleanField,
     'float': forms.FloatField,
@@ -22,9 +24,7 @@ def generate_schema():
     from the the configuration scheme.
     The configuration schema is retrived from _URL.
     """
-    # response = urllib2.urlopen(_URL)
-    # return substitute_fields(yaml.load(response.read()))
-    return substitute_fields(yaml.load(open('tardis/tests/tardis_basic.yml')))
+    return substitute_fields(yaml.load(open('tardis/tardis_config_definition.yml')))
 
 
 def substitute_fields(field_definition):
