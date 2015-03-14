@@ -5,7 +5,7 @@ django-toolbelt
 gunicorn
 psycopg2
 static3
-urllib2
+django-bootstrap3
 wsgiref
 django-crispy-forms
 pyyaml
